@@ -15,10 +15,12 @@ git add -A
 git add images
 git add index.html
 git commit -a -m "Updating documentation"
-if [ $? -ne 0 ]; then
-    echo "nothing to commit"
-    exit 0
-fi
+git status
+
+#if [ $? -ne 0 ]; then
+#    echo "nothing to commit"
+#    exit 0
+#fi
 
 git remote set-url origin ${repo_uri}
 git push origin HEAD:${target_branch} --force
